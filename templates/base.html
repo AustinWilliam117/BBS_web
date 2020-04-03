@@ -1,16 +1,149 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
+    <!-- 样式 -->
+    <link rel="stylesheet" href="{% static 'bootstrap-4.4.1-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    {% block header_extends %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
-<body>
-    <div>
-        <a href="{% url 'home' %}">
-            <h3>个人博客网站</h3>
-        </a>
-    </div>
-    <hr>
+
+    <!--头部-->
+    <header id="bbs_header">
+        <div class="top-bar">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-forum fixed-top">
+                    <a class="navbar-brand" href="#">
+                        <img src="../static/images/logo2.png" class="d-inline-block align-top" alt="">
+                        ZBTU Forum
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item {% block nav_index_active %}{% endblock %}">
+                                <a class="nav-link" href="{% url 'index' %}">首页 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    新闻
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">国际新闻</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">国内新闻</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">学院新闻</a>
+                                </div>
+                            </li>
+                            <li class="nav-item {% block nav_blog_active %}{% endblock %}">
+                                <a class="nav-link" href="{% url 'blog_list' %}">动态</a>
+                            </li>
+                            <li class="nav-item {% block nav_contact_active %}{% endblock %}">
+                                <a class="nav-link" href="#">联系</a>
+                            </li>
+                            <li class="nav-item {% block nav_about_active %}{% endblock %}">
+                                <a class="nav-link" href="#">关于</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0 .mr-auto">
+                            <input class="form-control mr-sm-2" type="search" placeholder="搜索" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">注册</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">登录</a>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
+        </div>
+    </header>
+
     {% block content %}{% endblock %}
+
+
+    <!--页脚-->
+    <footer id="bbs_footer">
+        <div class="container">
+            <div class="row">
+                <img src="" alt="">
+            </div>
+
+            <div class="row">
+                <div class="col-sm-1 col-lg-3 col-md-6">
+                    <ul>
+                        <li><a href="http://www.ztbu.edu.cn">学校官网</a></li>
+                        <li><a href="http://www.ztbu.edu.cn/xymap.html">校内地图</a></li>
+                        <li><a href="http://www.ztbu.edu.cn/tsg">图书馆藏</a></li>
+                        <li><a href="http://www.ztbu.edu.cn/xsc/xszzk.html">奖助学金</a></li>
+                        <li><a href="http://www.ztbu.edu.cn/jwxt.html">教务系统</a></li>
+                        <li><a href="http://www.ztbu.edu.cn/gfmt.html">官方媒体</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-1 col-lg-3 col-md-6">
+                    <ul>
+                        <li><a href="http://www.ztbu.edu.cn">学校官网</a></li>
+                        <li><a href="http://www.ztbu.edu.cn/xymap.html">校内地图</a></li>
+                        <li><a href="http://www.ztbu.edu.cn/tsg">图书馆藏</a></li>
+                        <li><a href="http://www.ztbu.edu.cn/xsc/xszzk.html">奖助学金</a></li>
+                        <li><a href="http://www.ztbu.edu.cn/jwxt.html">教务系统</a></li>
+                        <li><a href="http://www.ztbu.edu.cn/gfmt.html">官方媒体</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-1 col-lg-3 col-md-6">
+                    <ul>
+                        <li><a href="">与我们联系</a></li>
+                        <li><a href="">隐私与 Cookie</a></li>
+                        <li><a href="">使用条款</a></li>
+                        <li><a href="">京ICP备09042378号-6</a></li>
+                        <li><a href="">京公网安备 11010802023178</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-1 col-lg-3 col-md-6">
+                    <ul>
+                        <li><a href="">与我们联系</a></li>
+                        <li><a href="">隐私与 Cookie</a></li>
+                        <li><a href="">使用条款</a></li>
+                        <li><a href="">京ICP备09042378号-6</a></li>
+                        <li><a href="">京公网安备 11010802023178</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-around">
+    <div class="col-sm-1 col-lg-12 col-md-6"></div>
+    <ul class="record">
+        <li><a href="">与我们联系</a></li>
+        <li><a href="">隐私与 Cookie</a></li>
+        <li><a href="">使用条款</a></li>
+        <li><a href="">京ICP备09042378号-6</a></li>
+        <li><a href="">京公网安备 11010802023178</a></li>
+    </ul>
+    </div>
+    </div>
+    </footer>
+
+    <!-- bootstrap 依赖的JQuery -->
+    <script src="bootstrap-4.4.1-dist/js/jquery/jquery.js"></script>
+    {% static 'bootstrap-4.4.1-dist/css/bootstrap.min.css' %}
+    <script src="{% static 'bootstrap-4.4.1-dist/js/jquery/jquery.js' %}"></script>
+    <!-- 弹窗、下拉菜单、提示js -->
+    <script src="{% static "bootstrap-4.4.1-dist/js/popper.min.js" %}"></script>
+    <script src="{% static "bootstrap-4.4.1-dist/js/bootstrap.js" %}"></script>
+    <script src="{% static "js/index.js" %}"></script>
 </body>
 </html>

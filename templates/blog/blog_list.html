@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{# 页面标题 #}
+{% block title %}
+    {{ blog.title }}
+{% endblock %}
+
+{% block nav_blog_active %}active{% endblock %}
+
+{# 页面内容#}
+{% block content %}
+    <div class="blog">
+        {% for blog in blogs %}
+            <a href="{% url 'blog_detail' blog.pk%}">
+                <h3>{{ blog.title }}</h3>
+            </a>
+            <!-- 文本内容只显示前30个字符 -->
+            <p>
+                {% if blog.content|length > 30 %}
+                    {{ blog.content|slice:":30" }}...
+                {% else %}
+                    {{ blog.content }}
+                {% endif %}
+            </p>
+            {% empty %}
+            <p>-- 暂无内容，敬请期待! --</p>
+            {% endfor %}
+            <p>一共有{{ blogs|length }}篇博客</p>
+    </div>
+{% endblock %}
