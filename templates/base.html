@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     {% block header_extends %}{% endblock %}
-    <title>{% block title %}{% endblock %}</title>
+    <title>郑州工商论坛</title>
 </head>
 
     <!--头部-->
@@ -75,10 +75,6 @@
     <footer id="bbs_footer">
         <div class="container">
             <div class="row">
-                <img src="" alt="">
-            </div>
-
-            <div class="row">
                 <div class="col-sm-1 col-lg-3 col-md-6">
                     <ul>
                         <li><a href="http://www.ztbu.edu.cn">学校官网</a></li>
@@ -138,12 +134,11 @@
     </footer>
 
     <!-- bootstrap 依赖的JQuery -->
-    <script src="bootstrap-4.4.1-dist/js/jquery/jquery.js"></script>
-    {% static 'bootstrap-4.4.1-dist/css/bootstrap.min.css' %}
+    <script src="{% static 'bootstrap-4.4.1-dist/js/jquery/jquery.js' %}"></script>
     <script src="{% static 'bootstrap-4.4.1-dist/js/jquery/jquery.js' %}"></script>
     <!-- 弹窗、下拉菜单、提示js -->
-    <script src="{% static "bootstrap-4.4.1-dist/js/popper.min.js" %}"></script>
-    <script src="{% static "bootstrap-4.4.1-dist/js/bootstrap.js" %}"></script>
-    <script src="{% static "js/index.js" %}"></script>
+    <script src="{% static 'bootstrap-4.4.1-dist/js/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap-4.4.1-dist/js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
 </body>
 </html>

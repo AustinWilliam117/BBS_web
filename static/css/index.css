@@ -118,12 +118,12 @@ b{
 }
 
 #bbs_footer .container .row{
-    margin-top: 60px;
+    margin-top: 2em;
 }
 
-#bbs_footer .container .row .col-3 .row img{
+/* #bbs_footer .container .row .col-3 .row img{
     margin-top: -60px;
-}
+} */
 
 #bbs_footer .record li{
     float: left;
