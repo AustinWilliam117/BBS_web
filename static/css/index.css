@@ -15,13 +15,9 @@ b{
 }
 
 /* 头部 */
-#bbs_header .top-bar nav img{
+#bbs_header img{
     width: 30px;
     height: 30px;
-}
-
-#navbarSupportedContent{
-    background-color: #383d41;
 }
 
 #navbarSupportedContent .navbar-nav>li>a{

@@ -26,7 +26,7 @@
                                 {# 文本内容只显示前30个字符 #}
                                 <p class="blog-content">
                                     {% if blog.content|length > 120 %}
-                                        {{ blog.content|slice:":120" }}...
+                                        {{ blog.content|striptags|slice:":120" }}...
                                     {% else %}
                                         {{ blog.content }}
                                     {% endif %}
@@ -93,13 +93,38 @@
                             <ul>
                                 {% for blog_type in blog_types %}
                                     <li>
-                                        <a href=" {% url 'blogs_with_type' blog_type.pk %} ">{{ blog_type.type_name }}</a></li>
+                                        <a href=" {% url 'blogs_with_type' blog_type.pk %} ">
+                                            {{ blog_type.type_name }} ({{ blog_type.blog_count }})
+                                        </a>
+                                    </li>
                                 {% empty %}
                                     <li>
                                         暂无分类
                                     </li>
                                 {% endfor %}
                             </ul>
+                        </div>
+                    </div>
+
+                    <div class="d-none d-sm-block">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">日期归档</h4>
+                                <hr>
+                                <ul>
+                                    {% for blog_date, blog_count in blog_dates.items %}
+                                        <li>
+                                            <a href="{% url 'blog_with_date' blog_date.year blog_date.month %}">
+                                                {{ blog_date|date:"Y.m" }} ({{ blog_count }})
+                                            </a>
+                                        </li>
+                                    {% empty %}
+                                        <li>
+                                            暂无归档
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
