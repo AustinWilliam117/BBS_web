@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from .models import Blog, BlogType
 from django.db.models import Count
 from django.conf import settings
+from read_statistics.utils import read_statistics_once_read
 
 def get_blog_list_common_data(request,blogs_all_list):
      # 分页器
@@ -75,10 +76,7 @@ def blogs_with_date(request, year, month):
 
 def blog_detail(request, blog_pk):
     blog = get_object_or_404(Blog, pk=blog_pk)
-
-    if not request.COOKIES.get('blog_%s_read' % blog_pk):
-        blog.read_num += 1
-        blog.save()
+    read_cookie_key = read_statistics_once_read(request,blog)
 
     context = {}
     # 筛选当前博客大于创建时间博客的最后一条
@@ -87,5 +85,5 @@ def blog_detail(request, blog_pk):
     context['previous_blog'] = Blog.objects.filter(created_time__lt=blog.created_time).first()
     context['blog'] = blog
     response = render_to_response('blog/blog_detail.html',context)
-    response.set_cookie('blog_%s_read' % blog_pk,'true')
+    response.set_cookie(read_cookie_key,'true') # 阅读cookie标记
     return response

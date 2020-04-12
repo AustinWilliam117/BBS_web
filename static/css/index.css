@@ -109,8 +109,13 @@ b{
     color: #ececf6;
 }
 
+#bbs_footer ul{
+    padding-left: 0px!important;
+}
+
 #bbs_footer ul li{
     list-style: none;
+    color: #e9ecef;
 }
 
 #bbs_footer .container .row{
@@ -134,4 +139,13 @@ b{
 
 #bbs_footer ul li a:hover{
     color: #ffdf7e;
+}
+
+#bbs_footer p{
+    color: #424242;
+    font-weight: bold;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 7px;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
