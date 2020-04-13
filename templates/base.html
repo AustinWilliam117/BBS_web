@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'bootstrap-4.4.1-dist/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/read_statistics.css' %}">
     {% block header_extends %}{% endblock %}
     <title>郑州工商论坛</title>
 </head>
@@ -81,6 +82,7 @@
                         <li>一款为郑州工商学院打造的博客网站</li>
                         <li>基于Django+Bootstrap开发</li>
                         <li>本站于 20202-12-01 开始建站</li>
+                        <li><a href="{% url 'read_statistics' %}">阅读统计</a></li>
                     </ul>
                 </div>
 
