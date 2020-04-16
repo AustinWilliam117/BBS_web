@@ -13,7 +13,57 @@
 {% block content %}
 {#  图表容器 DOM #}
 
-<div id="read_statistics">
+<div id="read_statistics"></div>
+{# 今天24小时内的热门博客 #}
+<div>
+    <h3>今天热门博客</h3>
+    <ul>
+        {% for hot_data in today_hot_data %}
+            <li><a href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>
+                ({{ hot_data.read_num }})</li>
+        {% empty %}
+            <li>今天没有热门博客</li>
+        {% endfor %}    
+    </ul>
+</div>
+
+{# 昨天24小时内的热门博客 #}
+<div>
+    <h3>昨天热门博客</h3>
+    <ul>
+        {% for hot_data in yesterday_hot_data %}
+            <li><a href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>
+                ({{ hot_data.read_num }})</li>
+        {% empty %}
+            <li>昨天没有热门博客</li>
+        {% endfor %}    
+    </ul>
+</div>
+
+{# 七天内的热门博客 #}
+<div>
+    <h3>七天内热门博客</h3>
+    <ul>
+        {% for hot_blog in week_hot_blogs %}
+            <li><a href="{% url 'blog_detail' hot_blog.id %}">{{ hot_blog.title }}</a>
+                ({{ hot_blog.read_num_sum }})</li>
+        {% empty %}
+            <li>七天内没有热门博客</li>
+        {% endfor %}    
+    </ul>
+</div>
+
+{# 三十天内的热门博客 #}
+<div>
+    <h3>三十天内热门博客</h3>
+    <ul>
+        {% for hot_blog in month_hot_blogs %}
+            <li><a href="{% url 'blog_detail' hot_blog.id %}">{{ hot_blog.title }}</a>
+                ({{ hot_blog.read_num_sum }})</li>
+        {% empty %}
+            <li>三十天内没有热门博客</li>
+        {% endfor %}    
+    </ul>
 </div>
 
 <script>
@@ -47,5 +97,5 @@
         };
         // 图表初始化函数
         var chart = Highcharts.chart('read_statistics', options);
-    </script>
+</script>
 {% endblock %}
