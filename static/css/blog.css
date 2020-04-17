@@ -152,12 +152,15 @@ div.paginator p{
 
   /* 评论 */
 
-.comment{
+div.comment-area{
   margin-top: 2em;
-  border: 1px dashed;
-  padding: 2em;
 }
 
-.comment:not(:first-child){
+div.comment-area:not(:first-child){
   margin-bottom: 2em;
+}
+
+h3.comment-area-title{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.4em;
 }

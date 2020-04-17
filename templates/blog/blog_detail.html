@@ -49,23 +49,46 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-10 col-xs-offset-1">
-                    <div class="comment">
-                        提交评论区域 
+                <div class="col-lg-10 col-lg-offset-1">
+                    <div class="comment-area">
+                        <h3 class="comment-area-title">提交评论</h3>
                         {% if user.is_authenticated %}
-                            已登录
+                            <form action="{% url 'update_comment' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label>{{ user.username }}, 欢迎评论！</label>
+                                    <textarea id="comment_text" class="form-control" name="text" rows="5"></textarea>
+                                </div>
+                                <input type="hidden" name="object_id" value="{{ blog.pk }}">
+                                <input type="hidden" name="content_type" value="blog">
+                                <button type="submit" class="btn btn-primary">提交</button>
+                            </form>
                         {% else %}
-                            未登录
                             <form action="{% url 'login' %}" method="POST">
                                 {% csrf_token %}
-                                <input type="text" name="username">
-                                <input type="password" name="password">
-                                <input type="submit" value="登录">
+                                <div class="form-group">
+                                    <label for="username">用户名</label>
+                                    <input type="username" name="username" class="form-control" id="username" placeholder="Username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Password">密码</label>
+                                    <input type="password" name="password" class="form-control" id="Password" placeholder="Password">
+                                </div>
+                                <button type="submit" class="btn btn-primary">登录</button>
                             </form>
                         {% endif %}
                     </div>
-                    <div class="comment">
-                        评论列表区域
+                    <div class="comment-area">
+                        <h3 class="comment-area-title">评论列表</h3>
+                        {% for comment in comments %}
+                            <div>
+                                {{ comment.user.username }}
+                                {{ comment.comment_time|date:"Y-m-d H:i" }}
+                                {{ comment.text }}
+                            </div>
+                        {% empty %}
+                            暂无评论
+                        {% endfor %}
                     </div>
                 </div>
             </div>
