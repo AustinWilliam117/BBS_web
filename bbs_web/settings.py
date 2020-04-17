@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'blog',
     # 统计
     'read_statistics',
+    # 评论
+    'comment',
 ]
 
 MIDDLEWARE = [

@@ -6,3 +6,12 @@
     margin-top: 6em;
     margin-bottom: 6em;
 }
+
+.hot-data{
+    text-align: center;
+    margin-top: 2em;
+}
+
+.hot-data ul li{
+    list-style: none;
+}

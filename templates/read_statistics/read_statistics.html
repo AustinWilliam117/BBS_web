@@ -14,8 +14,9 @@
 {#  图表容器 DOM #}
 
 <div id="read_statistics"></div>
+
 {# 今天24小时内的热门博客 #}
-<div>
+<div class="hot-data">
     <h3>今天热门博客</h3>
     <ul>
         {% for hot_data in today_hot_data %}
@@ -28,7 +29,7 @@
 </div>
 
 {# 昨天24小时内的热门博客 #}
-<div>
+<div class="hot-data">
     <h3>昨天热门博客</h3>
     <ul>
         {% for hot_data in yesterday_hot_data %}
@@ -41,7 +42,7 @@
 </div>
 
 {# 七天内的热门博客 #}
-<div>
+<div class="hot-data">
     <h3>七天内热门博客</h3>
     <ul>
         {% for hot_blog in week_hot_blogs %}
@@ -54,7 +55,7 @@
 </div>
 
 {# 三十天内的热门博客 #}
-<div>
+<div class="hot-data">
     <h3>三十天内热门博客</h3>
     <ul>
         {% for hot_blog in month_hot_blogs %}

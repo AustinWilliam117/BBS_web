@@ -149,3 +149,15 @@ div.paginator p{
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
   }
+
+  /* 评论 */
+
+.comment{
+  margin-top: 2em;
+  border: 1px dashed;
+  padding: 2em;
+}
+
+.comment:not(:first-child){
+  margin-bottom: 2em;
+}
