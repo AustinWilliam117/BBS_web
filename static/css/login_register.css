@@ -1,7 +1,11 @@
+ul{
+    list-style: none;
+}
+
 #login{
     padding-top: 5em;
     padding-bottom: 5em;
-    background: url(../images/black\ hote.png) center center no-repeat;
+    background: url(../images/black\ hote.png) center no-repeat;
 }
 
 #login .row{
