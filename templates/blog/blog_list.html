@@ -3,6 +3,12 @@
 
 {% block nav_blog_active %}active{% endblock %}
 
+{% block header_extends %}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+{% block title %}动态列表|郑州工商论坛{% endblock %}
+
 {# 页面内容#}
 {% block content %}
     <div class="blog">

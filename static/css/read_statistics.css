@@ -1,10 +1,18 @@
+a{
+    color: rgb(81, 129, 172);
+}
+
+h3{
+    color: aliceblue;
+}
+
 #read_statistics {
     margin: 0 auto;
     height: 20em;
     min-width: 20em;
     max-width: 30em;
-    margin-top: 6em;
-    margin-bottom: 6em;
+    padding-top: 2em;
+    margin-bottom: 2em;
 }
 
 .hot-data{
@@ -14,4 +22,10 @@
 
 .hot-data ul li{
     list-style: none;
+    color: rgb(81, 129, 172);
+}
+
+.read_statistics_body{
+    padding-top: 5em;
+    background: url(../images/house.png) center center no-repeat;
 }

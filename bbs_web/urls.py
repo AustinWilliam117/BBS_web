@@ -10,9 +10,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ckeditor', include('ckeditor_uploader.urls')),
     path('blog/', include('blog.urls')),
+    path('comment/', include('comment.urls')),
     path('read_statistics/', include('read_statistics.urls')),
     path('login/', views.login, name='login'),
-    path('comment/', include('comment.urls')),
+    path('register/', views.register, name='register'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
