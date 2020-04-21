@@ -8,6 +8,8 @@
 
 {% block header_extends %}
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
 {% endblock %}
 
 {% block nav_blog_active %}active{% endblock %}
@@ -60,12 +62,9 @@
                         {% if user.is_authenticated %}
                             <form action="{% url 'update_comment' %}" method="POST">
                                 {% csrf_token %}
-                                <div class="form-group">
-                                    <label>{{ user.username }}, 欢迎评论！</label>
-                                    <textarea id="comment_text" class="form-control" name="text" rows="5"></textarea>
-                                </div>
-                                <input type="hidden" name="object_id" value="{{ blog.pk }}">
-                                <input type="hidden" name="content_type" value="blog">
+                                {% for filed in comment_form %}
+                                    {{ filed }}
+                                {% endfor%}
                                 <button type="submit" class="btn btn-primary">提交</button>
                             </form>
                         {% else %}

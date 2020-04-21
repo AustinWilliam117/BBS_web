@@ -13,6 +13,10 @@ a{
     margin-bottom: 2em;
 }
 
+.blog .container .row .card h3 span{
+  font-size: 16px!important;
+}
+
 .blog .container .row .card h4 span{
     font-size: 16px!important;
 }
@@ -163,4 +167,9 @@ div.comment-area:not(:first-child){
 h3.comment-area-title{
   border-bottom: 1px solid #ccc;
   padding-bottom: 0.4em;
+}
+
+/* 评论框 */
+.django-ckeditor-widget{
+  width: 100%;
 }

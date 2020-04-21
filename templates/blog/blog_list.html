@@ -17,11 +17,11 @@
                 <div class="col-md-8 col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">{% block blog_list_title %}博客列表{% endblock %}</h4>
+                            <h4 class="card-title">{% block blog_list_title %}最新动态{% endblock %}</h4>
                             <hr>
                             {% for blog in page_of_blogs.object_list %}
                                 <a href="{% url 'blog_detail' blog.pk%}">
-                                    <h3>{{ blog.title }}</h3>
+                                    <h3>{{ blog.title }}&nbsp;&nbsp;<span>{{ blog.author }}</span></h3>
                                 </a>
                                 <p class="blog-info">
                                     分类：<a href=" {% url 'blogs_with_type' blog.blog_type.pk %} ">
