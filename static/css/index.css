@@ -36,6 +36,10 @@ b{
     height: 55px;
 }
 
+#bbs_header .navber-right{
+    margin-right: 0;
+}
+
 /*轮播图*/
 #carouselExampleCaptions .carousel-inner .carousel-item img{
     height: 722px;

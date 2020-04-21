@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'read_statistics',
     # 评论
     'comment',
+    # 用户
+    'user',
 ]
 
 MIDDLEWARE = [
