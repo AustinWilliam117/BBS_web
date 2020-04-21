@@ -46,6 +46,7 @@ class regForm(forms.Form):
         email = self.cleaned_data['email']
         if User.objects.filter(email=email).exists():
             raise forms.ValidationError("邮箱已存在")
+        return email
 
     def clean_password_again(self):
         password = self.cleaned_data['password']

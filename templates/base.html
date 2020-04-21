@@ -6,6 +6,7 @@
     {# 移动设备优先 #}
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
     <link rel="shortcut icon" href="../static/images/logo2.png" type="image/x-icon">
+    
     {# 样式 #}
     <link rel="stylesheet" href="{% static 'bootstrap-4.4.1-dist/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
@@ -14,6 +15,7 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 
+<body>
     {# 头部 #}
     <header id="bbs_header">
         <div class="top-bar">
@@ -116,12 +118,13 @@
         <span>Welcome to visit my website © <a href="https://github.com/AustinWilliam117">AustinWilliam117</a></span>
     </div>
 
+   
+    <script src="{% static 'js/index.js' %}"></script>
     {# bootstrap 依赖的JQuery #}
-    <script src="{% static 'bootstrap-4.4.1-dist/js/jquery/jquery.js' %}"></script>
     <script src="{% static 'bootstrap-4.4.1-dist/js/jquery/jquery.js' %}"></script>
     {# 弹窗、下拉菜单、提示js #}
     <script src="{% static 'bootstrap-4.4.1-dist/js/popper.min.js' %}"></script>
     <script src="{% static 'bootstrap-4.4.1-dist/js/bootstrap.js' %}"></script>
-    <script src="{% static 'js/index.js' %}"></script>
+    <!-- {% block script_extends %}{% endblock %} -->
 </body>
 </html>
