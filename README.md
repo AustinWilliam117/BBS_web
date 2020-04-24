@@ -29,9 +29,14 @@ $ git clone https://github.com/AustinWilliam117/AustinWilliam117.git
    ~~~bash
    $ pip install -r requirements.txt
    ~~~
-   
 
-2. 运行开发服务器
+2. 创建管理员
+
+   ~~~bash
+   $ python manage.py createsuperuser
+   ~~~
+
+3. 运行开发服务器
 
    ~~~bash
    $ python manage.py runserver
@@ -39,5 +44,5 @@ $ git clone https://github.com/AustinWilliam117/AustinWilliam117.git
 
    
 
-3. 浏览器访问：http://127.0.0.1:8000，可进入到博客首页
+4. 浏览器访问：http://127.0.0.1:8000，可进入到博客首页
 
