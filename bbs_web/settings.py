@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -76,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'user.context_processors.login_model_form',
             ],
         },
     },
@@ -93,6 +93,18 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'USER': 'dyj',
+#         'NAME': 'bbs_web',
+#         'PASSWORD': 'dyj123456',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#         'OPTIONS':{'init_command':'SET sql_mode="STRICT_TRANS_TABLES",storage_engine=INNODB;'}  #设置数据库为INNODB，为第三方数据库登录用
+#     },
+# }
 
 
 # Password validation
@@ -144,23 +156,23 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'static')
 # 配置ckeditor
 CKEDITOR_UPLOAD_PATH = 'upload/'
 
-CKEDITOR_CONFIGS = {
-    'comment_ckeditor': {
-        'toolbar': 'custom',
-        'toolbar_custom': [
-            ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript'],
-            ["TextColor", "BGColor", 'RemoveFormat'],
-            ['NumberedList', 'BulletedList'],
-            ['Link', 'Unlink'],
-            ["Smiley", "SpecialChar", 'Blockquote'],
-        ],
-        'width': 'auto',
-        'height': '180',
-        'tabSpaces': 4,
-        'removePlugins': 'elementspath',
-        'resize_enabled': False,
-    }
-}
+# CKEDITOR_CONFIGS = {
+#     'comment_ckeditor': {
+#         'toolbar': 'custom',
+#         'toolbar_custom': [
+#             ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript'],
+#             ["TextColor", "BGColor", 'RemoveFormat'],
+#             ['NumberedList', 'BulletedList'],
+#             ['Link', 'Unlink'],
+#             ["Smiley", "SpecialChar", 'Blockquote'],
+#         ],
+#         'width': 'auto',
+#         'height': '180',
+#         'tabSpaces': 4,
+#         'removePlugins': 'elementspath',
+#         'resize_enabled': False,
+#     }
+# }
 
 # 自定义参数
 

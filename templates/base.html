@@ -74,7 +74,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                   <a class="dropdown-item {% block nav_user_info_active %}{% endblock %}" href="{% url 'user_info' %}">个人资料</a>
-                                  <a class="dropdown-item" href="#">发布博客</a>
+                                  <a class="dropdown-item" href="{% url 'blog_create' %}">发布博客</a>
                                   <div class="dropdown-divider"></div>
                                   <a class="dropdown-item" href="{% url 'logout' %}">退出</a>
                                 </div>

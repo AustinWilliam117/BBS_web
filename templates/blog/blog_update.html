@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{# 页面标题 #}
+{% block title %}
+    {{ article.title }}|郑州工商论坛
+{% endblock %}
+
+{% block header_extends %}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+{% block nav_blog_active %}active{% endblock %}
+
+{# 页面内容#}
+{% block content %}
+    <div class="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card">
+                        <div class="card-body">
+                            <form method="post" action=".">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="title">文章标题</label>
+                                    <!-- 在 value 属性中指定文本框的初始值为旧的内容，即 article 对象中的 title 字段 -->
+                                    <input type="text" class="form-control" id="title" name="title" value="{{ blog.title }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="content">文章正文</label>
+                                    <!-- 文本域不需要 value 属性，直接在标签体中嵌入数据即可 -->
+                                    <textarea type="text" class="form-control" id="content" name="content" rows="10">{{ blog.content }}</textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">提交</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

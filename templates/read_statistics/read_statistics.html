@@ -25,8 +25,8 @@
                         <h3>今天热门博客</h3>
                         <ul>
                             {% for hot_data in today_hot_data %}
-                                <15emi><a href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>
-                                 15em  ({{ hot_data.read_num }})</li>
+                                <li><a href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>
+                                    ({{ hot_data.read_num }})</li>
                             {% empty %}
                                 <li>今天没有热门博客</li>
                             {% endfor %}    

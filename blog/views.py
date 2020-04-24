@@ -1,14 +1,20 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse
 from django.core.paginator import Paginator
 from django.conf import settings
 from django.db.models import Count
+from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 
 from .models import Blog, BlogType
+from .forms import BlogForm
 from read_statistics.utils import read_statistics_once_read
 from comment.models import Comment
 from comment.forms import CommentForm
-from user.forms import loginForm
+
+# from user.forms import loginForm
+
+
 
 def get_blog_list_common_data(request,blogs_all_list):
      # 分页器
@@ -96,3 +102,77 @@ def blog_detail(request, blog_pk):
     response = render(request, 'blog/blog_detail.html',context)
     response.set_cookie(read_cookie_key,'true') # 阅读cookie标记
     return response
+
+def blog_create(request):
+    # 判断用户是否提交数据
+    if request.method == "POST":
+        # 将提交的数据赋值到表单实例中
+        blog_post_form = BlogForm(data=request.POST)
+        # 判断提交的数据是否满足模型的要求
+        if blog_post_form.is_valid():
+            # 保存数据，但暂时不提交到数据库中
+            new_blog = blog_post_form.save(commit=False)
+            # 指定数据库中作者id
+            new_blog.author = User.objects.get(id=request.user.id)
+
+            if request.POST['blog_type'] != 'none':
+                new_blog.blog_type = BlogType.objects.get(id=request.POST['blog_type'])
+            else:
+                return HttpResponse("请填写分类！")
+
+            # 将新文章保存到数据库中
+            new_blog.save()
+            # 完成后返回到文章列表
+            return redirect("blog_list")
+        # 如果数据不合法，返回错误信息
+        else:
+            return HttpResponse("表单内容有误，请重新填写。")
+    # 如果用户请求获取数据
+    else:
+        article_post_form = BlogForm()
+        context = {}
+        blog_types = BlogType.objects.all()
+        context['article_post_from'] = article_post_form
+        context['blog_types'] = blog_types
+        return render(request, 'blog/blog_create.html', context)
+
+
+def blog_delete(request, id):
+    # 根据 id 获取需要删除的文章
+    blog = Blog.objects.get(id=id)
+    # 过滤非作者的用户
+    if request.user != blog.author:
+        return HttpResponse("您没有删除这篇文章的权限.")
+    # 调用.delete()方法删除文章
+    blog.delete()
+    # 完成删除后返回文章列表
+    return redirect("blog_list")
+
+def blog_update(request,id):
+    # 获取需要修改的具体文章对象
+    blog = Blog.objects.get(id=id)
+    # 判断用户是否为 POST 提交表单数据
+    if request.method == "POST":
+        # 将提交的数据赋值到表单实例中
+        blog_post_form = BlogForm(data=request.POST)
+        # 判断提交的数据是否满足模型的要求
+        if blog_post_form.is_valid():
+            # 保存新写入的 title、body 数据并保存
+            blog.title = request.POST['title']
+            blog.content = request.POST['content']
+            blog.save()
+            # 完成后返回到修改后的文章中。需传入文章的 id 值
+            return redirect("blog_list")
+        # 如果数据不合法，返回错误信息
+        else:
+            return HttpResponse("表单内容有误，请重新填写。")
+
+    # 如果用户 GET 请求获取数据
+    else:
+        # 创建表单类实例
+        blog_post_form = BlogForm()
+
+        context = {}
+        context['blog'] = blog
+        context['blog_post_from'] = blog_post_form
+        return render(request, 'blog/blog_update.html', context)
