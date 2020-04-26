@@ -1,21 +1,73 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <!-- 移动设备优先 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- 样式 -->
-    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/about.css">
-    <title>Hello, world!</title>
-</head>
-<body>
-<h1>Hello, world!</h1>
+{% extends 'base.html' %}
+{% load static %}
 
-<!-- bootstrap 依赖的JQuery -->
-<script src="bootstrap-4.4.1-dist/js/jquery/jquery.js"></script>
-<!-- 弹窗、下拉菜单、提示js -->
-<script src="bootstrap-4.4.1-dist/js/popper.min.js"></script>
-<script src="bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% block nav_about_active %}active{% endblock %}
+
+{% block header_extends %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block title %}首页|郑州工商论坛{% endblock %}
+
+{% block content %}
+
+<!-- 第一幕 -->
+
+<!-- <div id="c">
+    <div id="sec">
+        <div id="sec-description">
+          <h1>Zerg</h1>
+          <p>Led by the cunning Queen of Blades, the zerg are set to unleash their alien horrors on the galaxy.</p>
+        </div>
+        <svg width="200px" height="500px">	
+            <polygon fill="white" stroke="blue" id="polygon" points="0,0,200,0,200,350,0,250" />
+        </svg>
+      </div>
+</div> -->
+
+<div>
+    <div id="mask" class="description">
+        <h1>创建</h1>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;郑州工商BBS，域名为xxxxxx.xx，是郑州工商学院正式BBS，主要为郑州工商学院师生与校友提供互联网电子公告牌（Bulletin Board System）服务。常用简称“郑州工商”“ZZBT”。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;郑州工商BBS最初由Django、Bootstrap等架设，于2020年4月21日正式开站测试。经过一系列的测试与调整之后，于202x年xx月xx日正式对外开放，而这一日期即定为本站站庆日。同年xx月xx日，经网友讨论得到较高支持，并经一月余试用的“郑州工商BBS”成为本站的正式名称，郑州工商BBS的历史也就此开始。</p>
+    </div>
+
+    <div id="hat" class="description">
+        <h1>发展</h1>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;自成立以来，郑州工商BBS已经成为郑州工商学院校内最重要的信息媒介之一，它的繁荣发展更好的服务了广大师生的线下学习、工作和生活。通过线上互动进行信息发布和相关讨论，已成为了北京大学学习生活的重要组成部分；而通过发起、组织线下活动，也使本站得以从更多层面，更好地服务广大用户。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;在建站以来的运作实践中，郑州工商BBS的管理确立了向站长和全体用户负责依照规则进行管理的原则，形成了站务、仲裁、用户三方面相互监督制衡，日常管理分别按照功能和层级任专门小组执行，各项工作采取集体决议负责等具体模式。本站的日常管理将长期基于这些原则和模式，并期待本站各位用户能与管理者一道，为郑州工商BBS的发展与建设共同努力。</p>
+    </div>
+
+    <div id="movie" class="description">
+        <h1>展望</h1>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block script_extends %}
+<script type="text/javascript" src="../static/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var maskTop = $('#mask').offset().top; //获取各个div对应的顶部坐标
+		var hatTop = $('#hat').offset().top;
+		var movieTop = $('#movie').offset().top;
+		$(window).scroll(function(){ //当页面滚动时触发以下函数
+			var pos = $(window).scrollTop(); //获取当前页面滚动坐标
+			$('#mask').css({
+				"background-position" : "0 "+ (pos-maskTop)*.3 +"px"
+			});//速度参数为0.5
+			$('#hat').css({
+				"background-position" : "0 "+ (pos-hatTop)*.5 +"px"
+			});//速度参数为0.3
+			$('#movie').css({
+				"background-position" : "0 "+ (pos-movieTop)*.8 +"px"
+			});//速度参数为0.8
+		})
+	});
+</script>
+
+{% endblock %}

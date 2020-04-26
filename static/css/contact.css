@@ -1,4 +1,4 @@
-/* #c {
+#c {
 	background:#FFF;
 	margin:10px;
     font-family:sans-serif;
@@ -39,50 +39,5 @@ p{
 	opacity:.9;
 	transform: translateY(-30px);
 	-webkit-transform: translateY(-30px);
-} */
-
-
-/* ... */
-
-*{
-    margin: 0;
-    padding: 0;
 }
 
-body{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #FFF;
-}
-
-.description{
-    padding: 100px 20%;
-}
-
-h1{
-    font-size: 100px;
-}
-
-p{
-    font-size: 24px;
-}
-
-h1, p{
-    margin-bottom: 30px;
-    line-height: 1.5;
-}
-
-#mask{
-    background: url(../images/earth.png) no-repeat;
-}
-
-#hat{
-    background: url(../images/new/捕获2.PNG) no-repeat;
-}
-
-#movie{
-    background: url(../images/new/捕获1.PNG) no-repeat;
-}
-
-/* #mask, #hat, #movie{
-    background-attachment: fixed;
-}.to($('#home'),1,{opacity:1}); */

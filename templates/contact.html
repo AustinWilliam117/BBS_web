@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block nav_contact_active %}active{% endblock %}
+
+{% block header_extends %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block title %}首页|郑州工商论坛{% endblock %}
+
+{% block content %}
+
+<!-- 第一幕 -->
+
+<div id="c">
+    <div id="sec">
+        <div id="sec-description">
+          <h1>Zerg</h1>
+          <p>Led by the cunning Queen of Blades, the zerg are set to unleash their alien horrors on the galaxy.</p>
+        </div>
+        <svg width="200px" height="500px">	
+            <polygon fill="white" stroke="blue" id="polygon" points="0,0,200,0,200,350,0,250" />
+        </svg>
+      </div>
+</div>
+
+
+
+{% endblock %}

@@ -15,36 +15,27 @@
             <br>
             <br>
             <br>
-            <!-- 提交文章的表单 -->
             <form method="POST" action="">
-                <!-- Django中需要POST数据的地方都必须有csrf_token -->
                 {% csrf_token %}
-                <!-- 文章标题 -->
                 <div class="form-group">
-                    <!-- 标签 -->
                     <label for="title">文章标题</label>
-                    <!-- 文本框 -->
                     <input type="text" class="form-control" id="title" name="title">
                 </div>
 
-                <!-- 文章栏目 -->
                 <div class="form-group">
-                    <label for="blog_type">栏目</label>
+                    <label for="blog_type">分类</label>
                     <select class="form-control" id="blog_type" name="blog_type">
-                        <option value="none">请选择栏目..</option>
+                        <option value="none">请选择分类..</option>
                         {% for blog_type in blog_types %}
                             <option value="{{ blog_type.id }}">{{ blog_type.type_name }}</option>
                         {% endfor %}
                     </select>
                 </div>
 
-                <!-- 文章正文 -->
                 <div class="form-group">
                     <label for="content">文章正文</label>
-                    <!-- 文本区域 -->
                     <textarea type="text" class="form-control" id="content" name="content" rows="12"></textarea>
                 </div>
-                <!-- 提交按钮 -->
                 <button type="submit" class="btn btn-primary">完成</button>
             </form>
             
