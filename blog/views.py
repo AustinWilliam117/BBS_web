@@ -4,6 +4,7 @@ from django.core.paginator import Paginator
 from django.conf import settings
 from django.db.models import Count
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
 from django.contrib.contenttypes.models import ContentType
 
 from .models import Blog, BlogType
