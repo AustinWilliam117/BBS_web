@@ -146,31 +146,24 @@ def blog_delete(request, id):
         return HttpResponse("您没有删除这篇文章的权限.")
     # 调用.delete()方法删除文章
     blog.delete()
-    # 完成删除后返回文章列表
     return redirect("blog_list")
 
 def blog_update(request,id):
     # 获取需要修改的具体文章对象
     blog = Blog.objects.get(id=id)
-    # 判断用户是否为 POST 提交表单数据
     if request.method == "POST":
         # 将提交的数据赋值到表单实例中
         blog_post_form = BlogForm(data=request.POST)
-        # 判断提交的数据是否满足模型的要求
         if blog_post_form.is_valid():
-            # 保存新写入的 title、body 数据并保存
             blog.title = request.POST['title']
             blog.content = request.POST['content']
             blog.save()
-            # 完成后返回到修改后的文章中。需传入文章的 id 值
             return redirect("blog_list")
-        # 如果数据不合法，返回错误信息
         else:
             return HttpResponse("表单内容有误，请重新填写。")
 
     # 如果用户 GET 请求获取数据
     else:
-        # 创建表单类实例
         blog_post_form = BlogForm()
 
         context = {}
