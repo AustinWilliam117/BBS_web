@@ -186,3 +186,12 @@ CACHES = {
         'LOCATION': 'my_cache_table',
     }
 }
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.qq.com'
+# EMAIL_PORT = 25
+# EMAIL_HOST_USER = '452734434@qq.com'
+# EMAIL_HOST_PASSWORD = 'DENGYUANjing521.'
+# EMAIL_SUBJECT_PREFIX = '郑州工商校园论坛'
+# # 与SMTP服务器通信时，是否启动TLS链接（安全链接）
+# EMAIL_USE_TLS = True

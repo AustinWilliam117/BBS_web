@@ -81,3 +81,14 @@ class ChangeNicknameForm(forms.Form):
         else:
             raise forms.ValidationError('用户尚未登录')
         return self.cleaned_data
+
+class BindEmailForm(forms.Form):
+    email = forms.EmailField(label='邮箱',widget=forms.EmailInput(
+            attrs={'class':'form-control','placeholder':'请输入邮箱'}
+        )
+    )
+
+    verification_code = forms.CharField(label='验证码',widget=forms.TextInput(
+            attrs={'class':'form-control','placeholder':'获取验证码'}
+        )
+    )
