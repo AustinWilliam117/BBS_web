@@ -20,7 +20,7 @@ def update_comment(request):
 
         # 返回数据
         data['status'] = 'SUCCESS'
-        data['username'] = comment.user.username
+        data['username'] = comment.user.get_nickname_or_username() 
         data['comment_time'] = comment.comment_time.strftime('%Y-%m-%d %H:%M:%S')
         data['text'] = comment.text
     else:

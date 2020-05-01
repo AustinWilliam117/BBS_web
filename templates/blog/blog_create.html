@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
     个人资料|郑州工商论坛
@@ -6,12 +7,11 @@
 
 {% block nav_user_info_active %}active{% endblock %}
 
+{% block header_extends %}
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+{% endblock %}
+
 {% block content %}
-<br>
-<br>
-<br>
-<br>
-<br>
 <div class="container">
     <div class="row">
         <div class="col-md-10">

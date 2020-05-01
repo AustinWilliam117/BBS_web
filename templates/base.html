@@ -70,7 +70,11 @@
                         {% else %}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ user.username }}
+                                    {% if has_nickname %}
+                                        {{ user.username }}({{ user.get_nickname }})
+                                    {% else %}
+                                        {{ user.username }}
+                                    {% endif %}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                   <a class="dropdown-item {% block nav_user_info_active %}{% endblock %}" href="{% url 'user_info' %}">个人资料</a>
@@ -129,11 +133,10 @@
                 </div>
             </div>
         </div>
+        <div class="copyright">
+            <span>Welcome to visit my website © <a href="https://github.com/AustinWilliam117">AustinWilliam117</a></span>
+        </div>
     </footer>
-
-    <div class="copyright">
-        <span>Welcome to visit my website © <a href="https://github.com/AustinWilliam117">AustinWilliam117</a></span>
-    </div>
 
     {# bootstrap 依赖的JQuery #}
     <script src="{% static 'bootstrap-4.4.1-dist/js/jquery/jquery.js' %}"></script>
