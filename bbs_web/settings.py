@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'comment',
     # 用户
     'user',
+    # 点赞
+    'likes',
 ]
 
 MIDDLEWARE = [
