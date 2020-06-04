@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load likes_tags %}
 
 {% block nav_blog_active %}active{% endblock %}
 
@@ -30,6 +31,7 @@
                                     &nbsp;&nbsp;<span>{{ blog.author }}</span>
                                     &nbsp;&nbsp;发表日期：{{ blog.created_time|date:"Y-m-d H:i" }}
                                     &nbsp;&nbsp;阅读：{{ blog.get_read_num }}
+                                    &nbsp;&nbsp;点赞: {% get_like_count blog %}
                                 </p>
                                 {# 文本内容只显示前120个字符 #}
                                 <p class="blog-content">

@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40571dfb-1820-487e-aa69-aedd50a9af4e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/comment/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/templatetags/comment_tags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/likes/templatetags/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bbs_web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bbs_web/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/likes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/likes/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/blog.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/blog.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blog/blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blog/blog_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +56,14 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/comment" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/comment" />
+      <recent name="$PROJECT_DIR$/likes/templatetags" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="bbs_web" type="Python.DjangoServer" factoryName="Django server">
@@ -93,7 +108,10 @@
       <workItem from="1587013698406" duration="1000" />
       <workItem from="1587642887897" duration="2939000" />
       <workItem from="1587723543093" duration="12158000" />
-      <workItem from="1590660262313" duration="2905000" />
+      <workItem from="1590660262313" duration="3505000" />
+      <workItem from="1590668300836" duration="2243000" />
+      <workItem from="1590726892529" duration="1363000" />
+      <workItem from="1591240916146" duration="5811000" />
     </task>
     <servers />
   </component>
@@ -111,5 +129,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591246512799">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.28.1920.1052@0.28.1920.1052" timestamp="1591246512799" />
   </component>
 </project>

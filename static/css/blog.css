@@ -3,6 +3,11 @@ a{
     text-decoration: none!important;
 }
 
+h3{
+  cursor: pointer;
+  display: inline-block;
+}
+
 .blog{
     margin-top: 30px;
     background-color: aliceblue;
@@ -182,4 +187,9 @@ div.comment{
 
 div.reply{
   margin-left: 2em;
+}
+
+/*将点赞变为红色*/
+svg.acitve{
+  color: #f22c40;
 }
