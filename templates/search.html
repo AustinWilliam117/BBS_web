@@ -35,7 +35,7 @@
                     上一页
                 </a>
             {% endif %}
-
+            &nbsp;&nbsp;
             {% if page_of_blogs.has_next %}
             <a class="btn btn-primary" href="{% url 'search' %}?wd={{ search_words }}&page={{ page_of_blogs.next_page_number }}">
                 下一页

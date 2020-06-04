@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40571dfb-1820-487e-aa69-aedd50a9af4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/comment/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comment/templatetags/comment_tags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/likes/templatetags/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bbs_web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bbs_web/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/likes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/likes/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/blog.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/blog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blog/blog_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog_create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/blog/blog_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +105,7 @@
       <workItem from="1590660262313" duration="3505000" />
       <workItem from="1590668300836" duration="2243000" />
       <workItem from="1590726892529" duration="1363000" />
-      <workItem from="1591240916146" duration="5811000" />
+      <workItem from="1591240916146" duration="8677000" />
     </task>
     <servers />
   </component>
